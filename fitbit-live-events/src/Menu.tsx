@@ -93,7 +93,7 @@ export default function SimpleTabs() {
         <AppBar position="static">
             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" color="primary">
                 <Tab color= "secondary" label="Welcome" {...a11yProps(0)} />
-                <Tab color= "secondary" label="Galery" {...a11yProps(1)} />
+                <Tab color= "secondary" label="Gallery" {...a11yProps(1)} />
                 <Tab color= "secondary" label="Login" {...a11yProps(2)} />
                 <Tab color= "secondary" label="Register" {...a11yProps(3)} />
                 <div>
