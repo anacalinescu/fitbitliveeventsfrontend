@@ -18,7 +18,8 @@ import PropTypes from "prop-types";
 import AddIcon from "@material-ui/icons/Add";
 import Fade from '@material-ui/core/Fade';
 import { positions } from '@material-ui/system';
-import InputWithIcon from './Login'
+import Login from './Login'
+import Register from './Register'
 import Image from 'material-ui-image'
 
 interface TabPanelProps {
@@ -142,7 +143,10 @@ export default function SimpleTabs() {
             Photos coming soon...
         </TabPanel>
         <TabPanel value={value} index={2}>
-            <InputWithIcon/>
+            <Login/>
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+            <Register/>
         </TabPanel>
         </div>
     </ThemeProvider>

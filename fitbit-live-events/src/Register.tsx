@@ -1,18 +1,15 @@
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import LockIcon from '@material-ui/icons/Lock';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import EmailIcon from '@material-ui/icons/Email';
+import PersonIcon from '@material-ui/icons/Person';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 
 
 
@@ -31,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function Login() {
+export default function Register() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState(true);
 
@@ -46,17 +43,65 @@ export default function Login() {
         spacing={2}
         direction="column"
         alignItems="center"
-        style={{ minHeight: '50vh', width: '25%', position: 'absolute', background: 'white',
+        style={{ minHeight: '70vh', width: '25%', position: 'absolute', background: 'white',
          left: '50%', top: '50%', transform: 'translate(-50%, -50%)',
          borderRadius: '15px' }}
       >
-      <div style={{position: 'absolute', top: '20%'}}> 
+      <div style={{position: 'absolute', top: '7%'}}> 
       <Typography variant="h3" component="h3" style={{ color: '#9e9e9e'}}>
-        Login
+        Register
       </Typography>
       </div>
 
+      <div style={{position: 'absolute', top: '20%'}}>
+      <TextField
+        className={classes.root}
+        id="input-with-icon-textfield"
+        label="Full name"
+        variant="filled"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <PersonIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
+      </div>
+
+      <div style={{position: 'absolute', top: '30%'}}>
+      <TextField
+        className={classes.root}
+        id="input-with-icon-textfield"
+        label="Email address"
+        variant="filled"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <EmailIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
+      </div>
+
       <div style={{position: 'absolute', top: '40%'}}>
+      <TextField
+        className={classes.root}
+        id="input-with-icon-textfield"
+        label="Mobile number"
+        variant="filled"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <PhoneAndroidIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
+      </div>
+
+      <div style={{position: 'absolute', top: '50%'}}>
       <TextField
         className={classes.root}
         id="input-with-icon-textfield"
@@ -72,7 +117,7 @@ export default function Login() {
       />
       </div>
 
-      <div style={{position: 'absolute', top: '55%'}}>
+      <div style={{position: 'absolute', top: '60%'}}>
       <TextField
         className={classes.root}
         id="input-with-icon-textfield"
@@ -88,23 +133,28 @@ export default function Login() {
       />
       </div>
 
-      <div style={{position: 'absolute', top: '70%', left: '20%'}}>
-      <FormControlLabel
-      label='Remember me!'
-      control={<Checkbox
-        style={{color: '#e91e63'}}
-        checked={checked}
-        onChange={handleChange}
-        inputProps={{ 'aria-label': 'primary checkbox' }}
-      />}/>
+      <div style={{position: 'absolute', top: '70%'}}>
+      <TextField
+        className={classes.root}
+        id="input-with-icon-textfield"
+        label="Repeat password"
+        variant="filled"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <LockIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
       </div>
 
-      <div style={{position: 'absolute', top: '75%'}}>
+      <div style={{position: 'absolute', top: '85%'}}>
       <Button className={classes.margin}
        style={{maxWidth: '270px', maxHeight: '50px',
        minWidth: '270px', minHeight: '50px',
        background: '#e91e63', color: 'white'}}>
-        Login
+        Register
       </Button>
       </div>
       </Grid>
