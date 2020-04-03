@@ -18,6 +18,8 @@ import PropTypes from "prop-types";
 import AddIcon from "@material-ui/icons/Add";
 import Fade from '@material-ui/core/Fade';
 import { positions } from '@material-ui/system';
+import InputWithIcon from './Login'
+import Image from 'material-ui-image'
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -51,8 +53,7 @@ function a11yProps(index: any) {
 
 const useStyles = makeStyles(theme => ({
     root: {
-      flexGrow: 1,
-      backgroundColor: theme.palette.background.paper
+      flexGrow: 1
     },
     addButton: {
       color: "white"
@@ -114,10 +115,23 @@ export default function SimpleTabs() {
                     onClose={handleClose}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleClose} style=
+                    {{maxWidth: '160px', maxHeight: '70px', minWidth: '160px', minHeight: '70px'}}
+                    >Past Events</MenuItem>
+                    <MenuItem onClick={handleClose} style=
+                    {{maxWidth: '160px', maxHeight: '70px', minWidth: '160px', minHeight: '70px'}}
+                    >Current Events</MenuItem>
+                    <MenuItem onClick={handleClose} style=
+                    {{maxWidth: '160px', maxHeight: '70px', minWidth: '160px', minHeight: '70px'}}
+                    >Future Events</MenuItem>
                 </Menu>
+                </div>
+                <div style={{ position:'absolute', right: '5%', width: '90px', height: '50px' }}>
+                <Image
+                  style={{ visibility:'visible', background: '#00bcd4' ,
+                   width: '170px', height: '50px', align: 'right'}}
+                  src="logo.png"
+                />
                 </div>
             </Tabs>
         </AppBar>
@@ -125,10 +139,10 @@ export default function SimpleTabs() {
             Homepage
         </TabPanel>
         <TabPanel value={value} index={1}>
-            Events coming soon...
+            Photos coming soon...
         </TabPanel>
         <TabPanel value={value} index={2}>
-            Photos coming soon...
+            <InputWithIcon/>
         </TabPanel>
         </div>
     </ThemeProvider>
