@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme } from "@material-ui/core/styles";
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { Router, hashHistory as history } from 'react-router';
+import routes from './Routes';
+import ReactDOM from "react-dom";
 
 const theme = createMuiTheme({
   palette: {
@@ -23,12 +26,14 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles();
   return (
+    <>
     <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <div>
       <SimpleTabs/>
     </div>
     </MuiThemeProvider>
+    </>
   );
 }
 

@@ -16,9 +16,11 @@ import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { url } from 'inspector';
 import Gallery from './GallerySlide';
+import Link from '@material-ui/core/Link';
 
 
 export default function Homepage() {
+    const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
     return (
         <div>
@@ -103,9 +105,12 @@ export default function Homepage() {
                         position: 'absolute', left: '5%'}}>
                             Future events
                         </Typography>
-                        <Typography variant="body1" style={{ color: '#03a9f4',
+                        <Typography variant="body1" style={{
                         position: 'absolute', bottom: '10%', left: '5%'}}>
-                            GO TO  EVENTS
+                            <Link href="/future_events"
+                            style={{ color: '#03a9f4'}}> 
+                            GO TO FUTURE EVENTS
+                            </Link>
                         </Typography>
                     </div>
                 </Grid>

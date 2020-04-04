@@ -16,6 +16,11 @@ const tileData = [
       title: '',
       author: 'Danson67',
     },
+    {
+        img: 'pic4.jpg',
+        title: '',
+        author: 'Danson67',
+      },
   ];
   
   export default tileData;
