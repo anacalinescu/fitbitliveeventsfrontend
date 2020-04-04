@@ -21,6 +21,7 @@ import { positions } from '@material-ui/system';
 import Login from './Login'
 import Register from './Register'
 import Image from 'material-ui-image'
+import Homepage from './Homepage'
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -137,7 +138,7 @@ export default function SimpleTabs() {
             </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
-            Homepage
+            <Homepage/>
         </TabPanel>
         <TabPanel value={value} index={1}>
             Photos coming soon...

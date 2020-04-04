@@ -154,7 +154,7 @@ export default function Register() {
        style={{maxWidth: '270px', maxHeight: '50px',
        minWidth: '270px', minHeight: '50px',
        background: '#e91e63', color: 'white'}}>
-        Register
+        Join Fitbit Live Events
       </Button>
       </div>
       </Grid>
