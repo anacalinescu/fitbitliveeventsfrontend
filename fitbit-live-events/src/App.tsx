@@ -1,40 +1,37 @@
 import React from 'react';
 import './App.css';
-import SimpleTabs from './Menu';
-import { makeStyles } from '@material-ui/core/styles';
+import MainMenu from './MainMenu'
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import { MuiThemeProvider, responsiveFontSizes} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { createMuiTheme } from "@material-ui/core/styles";
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { Router, hashHistory as history } from 'react-router';
-import routes from './Routes';
-import ReactDOM from "react-dom";
+import MainRouter from "./MainRouter";
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     background: {
-      default: '#424242',
+      default: '#292d35',
+    },
+    text: {
+      primary: '#000000',
     }
-  }
-});
-
-const useStyles = makeStyles({
-  root: {
-    background: '#424242',
   },
 });
 
-function App() {
-  const classes = useStyles();
+theme = responsiveFontSizes(theme);
+
+export default function App() {
   return (
-    <>
-    <MuiThemeProvider theme={theme}>
-    <CssBaseline />
-    <div>
-      <SimpleTabs/>
-    </div>
-    </MuiThemeProvider>
-    </>
+      <>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+            <header>
+              <MainMenu />
+            </header>
+
+            <main>
+              <MainRouter />
+            </main>
+        </MuiThemeProvider>
+      </>
   );
 }
-
-export default App;

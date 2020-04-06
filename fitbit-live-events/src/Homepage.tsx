@@ -17,12 +17,15 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { url } from 'inspector';
 import Gallery from './GallerySlide';
 import Link from '@material-ui/core/Link';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import {MuiThemeProvider} from "@material-ui/core";
 
 
 export default function Homepage() {
     const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
     return (
+      <Container maxWidth='lg'>
         <div>
             <div>
                 <Grid
@@ -120,5 +123,6 @@ export default function Homepage() {
                 <Gallery/>
             </div>
         </div>
+      </Container>
     );
-}
+};
