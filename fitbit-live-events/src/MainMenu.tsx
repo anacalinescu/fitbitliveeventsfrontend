@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   AppBar, Toolbar, Typography, List, ListItem,
-  withStyles, Grid, Drawer, Container, Button,
+  withStyles, Grid, Drawer, Container,
 } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 import DropDownMenu from "./DropDownMenu";
+import { Link } from 'react-router-dom';
 
 const styles = {
   list: {
@@ -31,12 +32,15 @@ const styles = {
     color: 'white',
   },
   menuButton: {
-    paddingLeft: 15,
-    paddingRight: 15,
+    padding: 15,
+    borderRadius: 10,
     fontWeight: 800,
     fontSize: '11pt',
     color: 'white',
     textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)',
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    "text-transform": 'uppercase',
 
     '&:hover': {
       boxShadow: '0px 0px 6px #ffffff',
@@ -119,11 +123,11 @@ class MainMenu extends React.Component<any, any> {
         <Container maxWidth='lg'>
           <Toolbar>
             <Typography style={{flexGrow:1}} className={this.props.classes.title}>FITBIT LIVE EVENTS</Typography>
-            <Button href="/" className = {this.props.classes.menuButton}>Home</Button>
+            <Link to="/" className = {this.props.classes.menuButton}>Home</Link>
             <DropDownMenu />
-            <Button className = {this.props.classes.menuButton}>Gallery</Button>
-            <Button href="/login" className = {this.props.classes.menuButton}>Login</Button>
-            <Button href="/register" className = {this.props.classes.menuButton}>Register</Button>
+            <Link className = {this.props.classes.menuButton}>Gallery</Link>
+            <Link to="/login" className = {this.props.classes.menuButton}>Login</Link>
+            <Link to="/register" className = {this.props.classes.menuButton}>Register</Link>
           </Toolbar>
         </Container>
       </AppBar>

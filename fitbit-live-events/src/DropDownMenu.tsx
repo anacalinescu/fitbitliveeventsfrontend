@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { Grow, Paper, Popper, MenuItem, MenuList } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,12 +13,15 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: theme.spacing(2),
     },
     menuButton: {
-      paddingLeft: 15,
-      paddingRight: 15,
+      padding: 15,
+      borderRadius: 10,
       fontWeight: 800,
       fontSize: '11pt',
       color: 'white',
       textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)',
+      textDecoration: 'none',
+      transition: 'all 0.3s ease',
+      "text-transform": 'uppercase',
 
       '&:hover': {
         boxShadow: '0px 0px 6px #ffffff',
@@ -80,7 +83,7 @@ export default function DropDownMenu() {
   return (
     <div className={classes.root}>
       <div>
-        <Button
+        <Link
           className={classes.menuButton}
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
@@ -88,7 +91,7 @@ export default function DropDownMenu() {
           onClick={handleToggle}
         >
           Events
-        </Button>
+        </Link>
         <Popper style={{zIndex: 1}} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
