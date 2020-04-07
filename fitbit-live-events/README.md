@@ -1,3 +1,11 @@
+## AFTER CLONE:
+
+* rm -rf node_modules
+* rm package-lock.json yarn.lock
+* npm cache clear --force
+* npm install
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
