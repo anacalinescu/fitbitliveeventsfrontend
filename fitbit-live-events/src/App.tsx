@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import MainMenu from './MainMenu'
+import MainMenu from './components/MainMenu'
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import { MuiThemeProvider, responsiveFontSizes} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import MainRouter from "./MainRouter";
+import MainRouter from "./components/MainRouter";
+import AccountMainMenu from './components/AccountMainMenu'
 
 let theme = createMuiTheme({
   palette: {
@@ -20,12 +21,24 @@ let theme = createMuiTheme({
 theme = responsiveFontSizes(theme);
 
 export default function App() {
+
+  const renderMenu = () => {   
+    console.log(window.localStorage.getItem('user')) 
+    if (!window.localStorage.getItem('user')) {  
+      console.log("NO LOGIN") 
+      return <MainMenu />
+    } else {
+      console.log("LOGIN")
+      return <AccountMainMenu />
+    }
+  }
+
   return (
       <>
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
             <header>
-              <MainMenu />
+              { renderMenu() }
             </header>
 
             <main>
